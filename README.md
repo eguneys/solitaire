@@ -1,6 +1,4 @@
-## 1111
-- [ ] Different shapes
-- [ ] Settle on ground
-- [ ] Down Left right on input 
-- [ ] Auto fall on timer
+## Space 2
 
+- [ ] Animate beginning to player
+- [ ] Movement Level Design Coherence
