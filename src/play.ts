@@ -1,30 +1,18 @@
 import { Context } from './types'
-import { Quad } from 'iksir'
-import { Vec2 } from 'iksir'
-
-import Stack from './stack'
-
-let i = 0
+import { ShapeOnGrid } from './abstract'
 
 export default class Play {
 
-  stack: Stack = Stack.zero(this.ctx)
+
+  song: ShapeOnGrid
 
   constructor(readonly ctx: Context) {
-
-    let { a } = this.ctx
+    this.song = ShapeOnGrid.empty
   }
 
-  init = () => {}
-
   update = (dt: number) => {
-    
-
   }
 
   draw = () => {
-
-    this.stack.draw()
-
   }
 }
