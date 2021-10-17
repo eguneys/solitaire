@@ -27,6 +27,13 @@ export default class Grid<A> {
     let [x, y] = [Math.floor(xw/this.cellw), Math.floor(yw/this.cellh)]
     return x + y * this.nbtilesx
   }
+  
+  
+  check(x: number, y: number) {
+    return this.collide(x, y, 1, 1)
+  }
+
+
 
   collide(x: number, y: number,
     w: number, h: number,

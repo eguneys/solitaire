@@ -25,6 +25,11 @@ export default class Camera {
       yw - this.pos[1] + 90]
   }
 
+  world(x: number, y: number) {
+    return [x + this.pos[0] - 160,
+      y + this.pos[1] - 90]
+  }
+
   update(dt: number) {
 
     let { deadzone,
@@ -80,8 +85,12 @@ export default class Camera {
     lasttarget[0] = target[0];
     lasttarget[1] = target[1];
 
-    pos[0] = lerp(0.5, pos[0], pos[0] + scroll_x);
-    pos[1] = lerp(0.5, pos[1], pos[1] + scroll_y);
+    //pos[0] = lerp(0.5, pos[0], pos[0] + scroll_x);
+    //pos[1] = lerp(0.5, pos[1], pos[1] + scroll_y);
+
+
+    pos[0] = lerp(Math.pow(0.01, dt), pos[0], pos[0] + scroll_x)
+    pos[1] = lerp(Math.pow(0.01, dt), pos[1], pos[1] + scroll_y)
 
     if (bounds) {
       pos[0] = Math.min(Math.max(pos[0], bounds[0] + 160), bounds[0] + bounds[2] - 160);
@@ -94,5 +103,23 @@ export default class Camera {
 
     let [x, y] = this.local(xw, yw)
     this.g.draw(quad, x, y, r, sx, sy)
+  }
+
+
+  rect(quad: Quad, xw: number, yw: number,
+    sx: number, sy: number) {
+
+    [[xw, yw, 1, sy],
+      [xw + sx - 1, yw, 1, sy],
+      [xw, yw, sx, 1],
+      [xw, yw + sy - 1, sx, 1]]
+      .forEach(([x, y, w, h]) =>
+        this.draw(quad, x, y, 0, w, h)
+      )
+  }
+
+  debugdraw(quad: Quad) {
+    let [x, y] = this.world(this.deadzone[0], this.deadzone[1])
+    this.rect(quad, x, y, this.deadzone[2], this.deadzone[3])
   }
 }

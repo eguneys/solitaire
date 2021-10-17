@@ -1,5 +1,6 @@
 import { Quad } from 'iksir'
 import { IDrawer } from './types' 
+import { lerp } from './util'
 
 export default class Anim {
 
@@ -19,6 +20,12 @@ export default class Anim {
   get _frame(): Quad { return this.frames[this.frame] }
   get _duration(): number { return this.durations[this.frame] } 
 
+  get _ox(): number { return this.xoffsets[this.frame] || 0 }
+  get _oy(): number { return this.yoffsets[this.frame] || 0 }
+
+  get iframe(): number {
+    return this.i / this._duration
+  }
 
   constructor(
     readonly g:IDrawer,
@@ -38,15 +45,18 @@ export default class Anim {
       return Quad.make(image, x, y, w, h)
     })
 
+    this.ox = this._ox
+    this.oy = this._oy
+
   }
 
 
   gotof(_frame: number) {
     this.frame = _frame
     this.i = 0
-    this.ox = 0
-    this.oy = 0
     this.ri = 0
+    this.ox = this._ox
+    this.oy = this._oy
   }
 
   update(dt: number) {
@@ -56,14 +66,25 @@ export default class Anim {
       this.i = 0
       if (this.frame === 0) {
         this.ri++
+        this.ox = this._ox
+        this.oy = this._oy
       }
     }
+
+    this.ox = lerp(0.3, this.ox, this._ox)
+    this.oy = lerp(0.3, this.oy, this._oy)
   }
 
 
   draw(x: number, y: number, flipH: boolean = false, flipV: boolean = false, scalex: number = 1, scaley: number = 1) {
     let frame = this._frame
 
-    this.g.draw(frame, x, y, 0, scalex, scaley) 
+    if (flipH) {
+      x += frame.w
+      scalex *= -1
+    }
+    this.g.draw(frame,
+      x + this.ox, y + this.oy,
+      0, scalex, scaley) 
   }
 }

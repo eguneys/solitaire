@@ -26,6 +26,41 @@ export default class Physics {
     return this._cbox
   }
 
+
+  _sa: Rectangle = [0, 0, 4, 1]
+  _sb: Rectangle = [0, 0, 4, 1]
+  
+
+  get sa(): Rectangle {
+    this._sa[0] = this.x
+    this._sa[1] = this.y + this.h
+    return this._sa
+  }
+
+ 
+  get sb(): Rectangle {
+    this._sb[0] = this.x + this.w - 4
+    this._sb[1] = this.y + this.h
+    return this._sb
+  }
+
+  get refreshstuff(): undefined  {
+    this.cbox
+    this.sa
+    this.sb
+    return 
+  }
+
+ get cx(): number {
+    return this.cbox[0] + this.cbox[2] * 0.5
+    
+  }
+
+  get cy(): number {
+    return this.cbox[1] + this.cbox[3] * 0.5
+    
+  }
+
   dx: number = 0
   dy: number = 0
   remx: number = 0
@@ -53,6 +88,7 @@ export default class Physics {
 
   move(dt: number) {
 
+    this.refreshstuff
 
     this.remx += this.dx * dt * this.damping
     let amount: number = Math.floor(this.remx)
@@ -91,11 +127,7 @@ export default class Physics {
   }
 
   draw(g: IDrawer, abox: Quad) {
-    g.draw(abox, this.cbox[0],
-      this.cbox[1],
-      0,
-      this.cbox[2],
-      this.cbox[3])
+    g.rect(abox, ...this.cbox)
   }
 }
 

@@ -11,6 +11,9 @@ import Camera from './camera'
 import { GameObject } from './objects'
 import { PlayerSpawn } from './spawn'
 import Body from './physics'
+import { oninterval } from './util'
+
+let i = 0
 
 export default class PlayV extends GameObject {
 
@@ -47,6 +50,13 @@ export default class PlayV extends GameObject {
 
   fcollide = (body: Body): boolean => {
     return !!this.issolid(...body.cbox)
+  }
+
+  check(x: number,
+    y: number,
+    ox: number = 0,
+    oy: number = 0) {
+    return this.issolid(x, y, 1, 1, ox, oy)
   }
 
   issolid(x: number,
@@ -92,5 +102,7 @@ export default class PlayV extends GameObject {
     for (let obj of this.objects) {
       obj.draw()
     }
+
+    //this.camera.debugdraw(this.qs.qyellow)
   }
 }
