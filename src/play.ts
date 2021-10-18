@@ -27,7 +27,7 @@ export default class PlayV extends GameObject {
 
   constructor(ctx: Context) {
     super(ctx)
-    this.grid = new Grid<boolean>(4, 4, 180, 180)
+    this.grid = new Grid<boolean>(4, 4, 360, 180)
 
     for (let i = 0; i < this.ms.res.length; i++) {
       let resi = this.ms.res[i]
@@ -88,10 +88,10 @@ export default class PlayV extends GameObject {
   }
 
   update = (dt: number) => {
-    this.camera.update(dt)
     for (let obj of this.objects) {
       obj.update(dt)
     }
+    this.camera.update(dt)
   }
 
   draw = () => {

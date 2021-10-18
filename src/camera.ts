@@ -89,8 +89,8 @@ export default class Camera {
     //pos[1] = lerp(0.5, pos[1], pos[1] + scroll_y);
 
 
-    pos[0] = lerp(Math.pow(0.01, dt), pos[0], pos[0] + scroll_x)
-    pos[1] = lerp(Math.pow(0.01, dt), pos[1], pos[1] + scroll_y)
+    pos[0] = lerp(Math.pow(0.01, dt)*0.4, pos[0], pos[0] + scroll_x)
+    pos[1] = lerp(Math.pow(0.01, dt)*0.5, pos[1], pos[1] + scroll_y)
 
     if (bounds) {
       pos[0] = Math.min(Math.max(pos[0], bounds[0] + 160), bounds[0] + bounds[2] - 160);

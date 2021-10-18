@@ -3,9 +3,13 @@ import { IDrawer } from './types'
 import Quads from './quads'
 import PlayV from './play'
 import { Vec2, Rectangle } from './matrix'
+import { GameRoomObject } from './objects'
 
 export default class Sensor {
 
+  get grid(): Grid<boolean> {
+    return this.base.grid
+  }
 
   get tile(): boolean {
     return this.grid.collide(...this.area)
@@ -21,26 +25,39 @@ export default class Sensor {
       .collide(...this.rarea)
   }
 
-  get earea(): Rectangle { 
+
+  get area(): Rectangle {
     return [
-      this.area[0] + this.dir[0],
-      this.area[1] + this.dir[1],
-      this.area[2],
-      this.area[3]
+      this.box[0] + this.base.x,
+      this.box[1] + this.base.y,
+      this.box[2],
+      this.box[3]
+    ]
+  }
+
+
+  get earea(): Rectangle { 
+    let area = this.area
+    return [
+      area[0] + this.dir[0],
+      area[1] + this.dir[1],
+      area[2],
+      area[3]
     ]
   }
 
   get rarea(): Rectangle { 
+    let area = this.area
     return [
-      this.area[0] - this.dir[0],
-      this.area[1] - this.dir[1],
-      this.area[2],
-      this.area[3]]
+      area[0] - this.dir[0],
+      area[1] - this.dir[1],
+      area[2],
+      area[3]]
   }
 
   constructor(
-    readonly grid: Grid<boolean>,
-    readonly area: Rectangle,
+    readonly base: GameRoomObject,
+    readonly box: Rectangle,
     readonly dir: Vec2) {}
 
 

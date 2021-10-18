@@ -6,7 +6,7 @@ import { Vec2, Rectangle } from './matrix'
 import Input from './input'
 import Body from './physics'
 import { ticks } from './shared'
-import { PlayerObject } from './objects'
+import { down, PlayerObject } from './objects'
 import Sensor from './sensor'
 import Idle from './idle'
 
@@ -41,12 +41,24 @@ export default class Run extends PlayerObject {
   dy: number = 0
 
 
+  _saheada: Sensor = this.sensor([0, this.h, 4, 1], down)
+  _saheadb: Sensor = this.sensor([this.w - 4, this.h, 4, 1], down)
+
+  get sahead(): Sensor {
+    return this.facing === -1 ? this._saheada : this._saheadb
+  }
+
+  get stepdown(): boolean {
+    return !this.sahead.tile && this.sahead.extend
+  }
+
+
   constructor(ctx: Context,
     play: PlayV,
     facing: number) { 
     super(ctx, play, facing) }
 
-  oldframe: number = 0
+  oldframe: number = -1
 
   init(x: number, y: number) {
     this.x = x
@@ -56,6 +68,7 @@ export default class Run extends PlayerObject {
     this.camera.follow(this.ctarget)
   }
 
+  logx: number = this.x
 
   update(dt: number) {
 
@@ -139,8 +152,8 @@ export default class Run extends PlayerObject {
   }
 
   draw() {
+    this.sahead.draw(this.camera, this.qs)
     this.astep.draw(this.x, this.y, this.facing === -1)
-    super.draw()
  }
 
 }

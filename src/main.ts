@@ -38,7 +38,6 @@ export default function app(element: HTMLElement) {
         let dt = (ts - (last || ts)) / 1000
         last = ts
 
-
         input.update(dt)
         play.update(dt)
         play.draw()

@@ -1,7 +1,6 @@
 import { Context } from './types'
 import { Play } from 'iksir'
 import PlayV from './play'
-import Player from './player'
 import { PlayerObject } from './objects'
 import { ticks, dur } from './shared'
 import Anim from './anim'

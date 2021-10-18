@@ -31,8 +31,6 @@ export abstract class GameObject {
         fx, fy, durations, xoffsets, yoffsets)
     }
 
-
-
   constructor(readonly ctx: Context) {}
 
   abstract init(x: number, y: number): void;
@@ -42,6 +40,12 @@ export abstract class GameObject {
 }
 
 export abstract class GameRoomObject extends GameObject {
+
+
+  sensor(box: Rectangle, dir: Vec2): Sensor {
+    return new Sensor(this,
+      box, dir)
+  }
 
 
   get grid(): Grid<boolean> { return this.play.grid }
@@ -54,7 +58,7 @@ export abstract class GameRoomObject extends GameObject {
     this._ctarget[1] = this.y + this.h * 0.5
     return this._ctarget
   }
-  
+
 
   abstract x: number
   abstract y: number
@@ -69,7 +73,7 @@ export abstract class GameRoomObject extends GameObject {
   }
 }
 
-let down: Vec2 = [0, 4]
+export let down: Vec2 = [0, 4]
 
 export abstract class PlayerObject extends GameRoomObject {
 
@@ -77,15 +81,8 @@ export abstract class PlayerObject extends GameRoomObject {
   readonly w: number = 16
   readonly h: number = 16
 
-  _sa: Sensor = new Sensor(this.grid, [0, 0, 4, 1], down)
-  _sb: Sensor = new Sensor(this.grid, [0, 0, 4, 1], down)
-
-  rsensors() {
-    this._sa.area[0] = this.x
-    this._sa.area[1] = this.y + this.h
-    this._sb.area[0] = this.x
-    this._sb.area[1] = this.y + this.h
-  }
+  _sa: Sensor = this.sensor([0, this.h, 4, 1], down)
+  _sb: Sensor = this.sensor([this.w - 4, this.h, 4, 1], down)
 
   get sa(): Sensor {
     return this.facing === 1 ? this._sb : this._sa
@@ -102,12 +99,6 @@ export abstract class PlayerObject extends GameRoomObject {
   constructor(ctx: Context,
     play: PlayV,
     readonly facing: number) { super(ctx, play) }
-
-
-  update(dt: number) {
-    super.update(dt)
-    this.rsensors()
-  }
 
   draw() {
     this.sa.draw(this.camera, this.qs)
