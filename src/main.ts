@@ -1,6 +1,5 @@
 import Iksir from 'iksir'
 import Assets from './assets'
-import Maps from './maps'
 import { Context } from './types'
 import spritesPng from '../assets/sprites.png'
 import levelsPng from '../assets/sprites2.png'
@@ -8,6 +7,7 @@ import Play from './play'
 
 import Quads from './quads'
 import Input from './input'
+import PlayDrawer from './drawer'
 
 export default function app(element: HTMLElement) {
 
@@ -15,19 +15,18 @@ export default function app(element: HTMLElement) {
     a => {
 
       let input = new Input()
-      let ms = new Maps(a[1])
-      let g = Iksir(element, 320, 180)
+      let _g = Iksir(element, 180, 320)
 
-      g.glOnce(a[0])
+      _g.glOnce(a[0])
 
       let qs = new Quads(a)
+      let g = new PlayDrawer(_g)
 
       let context: Context = {
         input,
         g,
         a,
         qs,
-        ms
       }
 
       let play = new Play(context)
@@ -42,7 +41,7 @@ export default function app(element: HTMLElement) {
         play.update(dt)
         play.draw()
 
-        g.flush()
+        _g.flush()
 
         requestAnimationFrame(step)
       }
