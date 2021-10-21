@@ -11,8 +11,7 @@ export abstract class GameObject {
   get qs(): Quads { return this.ctx.qs }
   get input(): Input { return this.ctx.input }
 
-
-  g: IDrawer
+  readonly g: IDrawer
 
   anim(grid: Array<number>,
     fx: number, fy: number,
