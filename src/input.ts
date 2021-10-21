@@ -59,7 +59,7 @@ export default class Input {
 
 
   _press(key: string) {
-    if (!this._btn.has(key) || this._btn.get(key) === 0) {
+    if (!this._btn.has(key) || this._btn.get(key)! <= 0) {
       this._btn.set(key, ticks.one)
     }
   }

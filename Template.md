@@ -1,8 +1,7 @@
+
 ## 1. Introduction
 
 ### What is 1989
-
-
 
 ### Why 1989
 
