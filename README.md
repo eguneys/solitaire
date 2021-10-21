@@ -1,4 +1,9 @@
-## Space 2
+## Solitaire
 
-- [ ] Animate beginning to player
-- [ ] Movement Level Design Coherence
+
+Stack - Card - Card - Card 
+
+
+
+Deal cards 
+

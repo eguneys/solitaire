@@ -50,7 +50,6 @@ export default class Anim {
 
   }
 
-
   gotof(_frame: number) {
     this.frame = _frame
     this.i = 0

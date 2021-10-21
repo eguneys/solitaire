@@ -29,6 +29,8 @@ export default function app(element: HTMLElement) {
 
       let play = new Play(context)
 
+      play.init(0, 0)
+
       let last: number
       function step(ts: number) {
 

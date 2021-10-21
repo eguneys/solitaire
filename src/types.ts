@@ -12,6 +12,7 @@ export type Context = {
 }
 
 export interface IDrawer {
+  translate(x: number, y: number): void;
   rect(quad: Quad, x: number, y: number,
     w: number, h: number): void;
   draw(quad: Quad, x: number, y: number,
