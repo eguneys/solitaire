@@ -1,6 +1,5 @@
 import { Play, Quad } from 'iksir'
 import Quads from './quads'
-import Maps from './maps'
 import Input from './input'
 
 export type Images = Array<HTMLImageElement>
@@ -10,7 +9,6 @@ export type Context = {
   g: Play,
   a: Images,
   qs: Quads,
-  ms: Maps
 }
 
 export interface IDrawer {

@@ -1,6 +1,5 @@
 import Iksir from 'iksir'
 import Assets from './assets'
-import Maps from './maps'
 import { Context } from './types'
 import spritesPng from '../assets/sprites.png'
 import levelsPng from '../assets/sprites2.png'
@@ -15,7 +14,6 @@ export default function app(element: HTMLElement) {
     a => {
 
       let input = new Input()
-      let ms = new Maps(a[1])
       let g = Iksir(element, 320, 180)
 
       g.glOnce(a[0])
@@ -27,7 +25,6 @@ export default function app(element: HTMLElement) {
         g,
         a,
         qs,
-        ms
       }
 
       let play = new Play(context)
