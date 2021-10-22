@@ -6,8 +6,6 @@ What is the mystery ?
 Eren killed an alien and wrote the note to notify himself later to stay connected with reality.
  
 
-
-
 Earth
 Rainy, forest
 Tree, river
