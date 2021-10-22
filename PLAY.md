@@ -1,4 +1,4 @@
-Intro
+Scene Intro
 
 Africa, forest zooming into small village, river.
 
@@ -7,8 +7,13 @@ Scene Bad Luck
 Beach sun light
 Eren boat ?
 Rain on sand, leaves, beach, boat
+Prompt Rush
 Blade, branches, chop
+Prompt Chop
 Light flash, Red splash, bleeding arm
+
+Prompt First aid
+
 
 Scene Noises in the Head
 
@@ -17,16 +22,22 @@ Boat sailing,
 fishes in the net
 Eren happy ?
 Dark silhouette on shore
+Prompt Turn
 Glass bottle with blood.
 
 Note 
 
 Eren rushing through road.
 
+Prompt Tell body
+Prompt Tell note 
+
+Prompt go home
+Prompt go to beach
 
 Night to day
 Blade, wounded arm,
-Boat, rain, cover, accident words slightly fading.
+Prompt Boat, rain, cover, accident words slightly fading.
 
 Scene Flashbacks of the case
 

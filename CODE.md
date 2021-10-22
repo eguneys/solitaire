@@ -1,0 +1,12 @@
+- [ ] Scene Transitions
+- [ ] Display text
+- [ ] Slowly display text
+- [ ] Text with color
+- [ ] Change background color
+- [ ] Enumerate colors
+- [ ] Prompt input
+- [ ] Display input prompt text
+- [ ] Text with different position
+
+- Scene enter display text scene exit
+- Scene enter display text scene exit
