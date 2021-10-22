@@ -45,7 +45,7 @@ Applies the first aid kit on his boat and goes back home. Finds his mom is sleep
 
 1 Week later: (The big event)
 
-Eren spends the rest of the week at home in leisure. Finally it's sunny on Monday, he takes his boat to fishing. His net full of fish, he returns relatively happy, until he beaches his boat. He discovers an abandoned body washed up into shore. As he turns it face up, body bleeds through it's stomach revealing a glass bottle inside it.
+Eren spends the rest of the week at home in leisure. Finally it's sunny on Monday, he takes his boat to fishing. His net full of fish, he returns relatively happy, until he beaches his boat. He discovers an abandoned body washed up into shore. As he turns it face up, body bleeds through it's stomach revealing a glass bottle inside it. He opens the bottle and picks up what seems to be a note.
 
 > So it was alien 
 
@@ -70,6 +70,10 @@ Eren searching for his boat's cover, discovers a strange sentient, with latex sh
 Eren hears these words one by one and everything goes dark.
 
 Two weeks later: (Resolution)
+
+Eren wakes up at his house, he finds his mom is standing outside. She smiles seeing him awake. He slowly realizes that the alien encounter knocked him out and he dreamed all murder mystery in his head. 
+
+Name the movie, about a biologist, the quote is from, written in the note to see the source code at github.com/eguneys.
 
 
 

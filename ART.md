@@ -1,0 +1,24 @@
+- Animation Africa, forest zooming into small village, river 
+- Image Beach sun light
+- Image? Eren boat
+- Animation Rain on sand, leaves, beach, boat
+- Image Blade
+- Animation Chop branches
+- Animation Red splash
+- Animation bleeding arm
+- Animation Bleeding arm heals into a wound
+- Image Boat sailing
+- Image fishes in the net
+- Image Eren happy ?
+- Image Dark silhouette on shore
+- Animation Glass bottle with dripping blood
+- Image Note
+- Animation Eren rushing through road.
+- Image Boat, rain cover, accident?
+- Animation Rainy day on the beach
+- Animation Latex sentient slowly moving
+- Animation? Eren house ceiling
+- Image? Mom smile
+- Animation Excited particle to rise
+- Animation Particle calms
+- Image Final 
