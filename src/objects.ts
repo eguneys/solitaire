@@ -6,10 +6,12 @@ import Anim from './anim'
 import { ticks, dur } from './shared'
 import Input from './input'
 import PlayDrawer from './drawer'
+import _Text from './text'
 
 export abstract class GameObject {
   get qs(): Quads { return this.ctx.qs }
   get input(): Input { return this.ctx.input }
+  get $text(): _Text { return this.ctx.text }
 
 
   g: IDrawer
