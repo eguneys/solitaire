@@ -1,10 +1,4 @@
-.sh-wrap {
-  user-select: none;
-  position: relative;
-}
-
-
-.sh-wrap canvas {
+#app canvas {
   background: #f0f0f0;
   align-self: center;
   image-rendering: pixelated;
@@ -12,12 +6,4 @@
   aspect-ratio: 16/9;
   width: min(calc(100vw - 8px), calc(100vh * (16/9) - 8px))
 }
-
-.sh-wrap .text {
-  position: absolute;
-  text-align: center;
-  font-family: 'Mochiy Pop One', sans-serif;
-  font-size: max(3vw, 3vh)
-}
-
 

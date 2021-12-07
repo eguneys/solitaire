@@ -17,6 +17,7 @@ export default class Play extends GameObject {
 
   draw() {
     this.g.draw(this.qs.qbg, 0, 0, 0, 320, 180)
+    super.draw()
   }
 }
 

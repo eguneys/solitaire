@@ -6,13 +6,13 @@ import Anim from './anim'
 import { ticks, dur } from './shared'
 import Input from './input'
 import PlayDrawer from './drawer'
-import _Text from './text'
+import _Text from './ntext'
 
 export abstract class GameObject {
   get qs(): Quads { return this.ctx.qs }
   get input(): Input { return this.ctx.input }
-  get $text(): _Text { return this.ctx.text }
 
+  $text: _Text
 
   g: IDrawer
 
@@ -29,11 +29,15 @@ export abstract class GameObject {
 
   constructor(readonly ctx: Context) {
     this.g = new PlayDrawer(this.ctx.g)
+
+    this.$text = new _Text()
   }
 
   abstract init(x: number, y: number): void;
   abstract update(dt: number): void;
-  abstract draw(): void;
+  draw(): void {
+    this.$text.draw(this.g)
+  }
 
 }
 

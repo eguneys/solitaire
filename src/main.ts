@@ -8,17 +8,14 @@ import Play from './play'
 
 import Quads from './quads'
 import Input from './input'
-import _Text from './text'
 
 export default function app(element: HTMLElement) {
-
-  let text = new _Text(element)
 
   Assets([spritesPng, levelsPng]).then(
     a => {
 
       let input = new Input()
-      let g = Iksir(text.$wrap, 320, 180)
+      let g = Iksir(element, 320, 180)
 
       g.glOnce(a[0])
 
@@ -28,8 +25,7 @@ export default function app(element: HTMLElement) {
         input,
         g,
         a,
-        qs,
-        text
+        qs
       }
 
       let play = new Play(context)
