@@ -2,6 +2,7 @@ import { Context } from './types'
 import { ticks, dur } from './shared'
 import { GameObject } from './objects'
 import Anim from './anim'
+import './solitaire'
 
 export default class Play extends GameObject {
 
