@@ -21,7 +21,7 @@ export default class PlayDrawer implements IDrawer {
   draw(quad: Quad, x: number, y: number,
     r: number, sx: number, sy: number): void {
 
-      this.g.draw(quad, this.x + x, this.y + y, r, sx, sy)
+      this.g.draw(quad, -this.x + x, -this.y + y, r, sx, sy)
     }
 
 

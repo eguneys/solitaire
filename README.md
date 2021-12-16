@@ -83,3 +83,29 @@ Faster die on miss interaction.
 
 
 
+
+
+## Art
+
+Character art:
+
+Idle Lie, Get up, Wobble down, Wobble up, Speed up, Fast straight movement, Repeated kill action.
+
+
+Environment art:
+
+Desert, sand, vegetation, sun, clouds, cactus
+
+Vegetation rolling in wind.
+Wind moves.
+
+Fx art:
+
+Drop trail,
+Walk trail,
+Get up fx,
+Wobble fx,
+Speed fx,
+Fast straight movement smooth fx,
+Repeated kill action fx
+
